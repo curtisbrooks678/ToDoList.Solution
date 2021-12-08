@@ -35,11 +35,17 @@ public class Program
 
   static void ViewList()
   {
-    int counter = 1;
-    foreach (Item item in Item.GetAll())
+    if (Item.GetAll().Count == 0) {
+      Console.WriteLine("No items in list. Please add items.");
+    }
+    else 
     {
-      Console.WriteLine(counter.ToString() + ". " + item.Description);
-      counter++;
+      int counter = 1;
+      foreach (Item item in Item.GetAll())
+      {
+        Console.WriteLine(counter.ToString() + ". " + item.Description);
+        counter++;
+      }
     }
     Main();
   }
