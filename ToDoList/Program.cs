@@ -16,7 +16,7 @@ public class Program
     }
     else if (response == "view")
     {
-      // ViewList();
+      ViewList();
     }
     else 
     {
@@ -30,6 +30,17 @@ public class Program
     Console.WriteLine("Please enter an item");
     string description = Console.ReadLine();
     Item newItem = new Item(description);
+    Main();
+  }
+
+  static void ViewList()
+  {
+    int counter = 1;
+    foreach (Item item in Item.GetAll())
+    {
+      Console.WriteLine(counter.ToString() + ". " + item.Description);
+      counter++;
+    }
     Main();
   }
 }
