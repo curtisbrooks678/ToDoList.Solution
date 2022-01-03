@@ -15,9 +15,18 @@
     @Html.LabelFor(model => model.Description)
     @Html.EditorFor(model => model.Description)
 
-    @Html.LabelFor(model => model.Category)
+    @Html.LabelFor(model => model.DueDate, new {@type="datetime-local"})
+    @Html.TextBoxFor(model => model.DueDate, new {@type="datetime-local"})
+    
+    @Html.LabelFor(model => model.Completed)
+    @Html.CheckBoxFor(model => model.Completed)
+
+    @Html.Label("Select category")
     @Html.DropDownList("CategoryId")
 
     <input type="submit" value="Save" />
 }
+
 <p>@Html.ActionLink("Back to list", "Index")</p>
+
+
