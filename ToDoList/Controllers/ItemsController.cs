@@ -15,9 +15,18 @@ namespace ToDoList.Controllers
     {
       _db = db;
     }
-    public ActionResult Index()
+    public ActionResult Index(bool sort = false)
     {
-        return View(_db.Items.ToList());
+      List<Item> model = new List<Item> {};
+      if (sort == true) 
+      {
+        model = _db.Items.OrderBy(item => item.DueDate).ToList();
+      } 
+      else 
+      {
+        model = _db.Items.ToList();
+      }
+      return View(model);
     }
 
     public ActionResult Create()

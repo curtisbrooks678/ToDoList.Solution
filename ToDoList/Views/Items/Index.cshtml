@@ -17,6 +17,16 @@
   <li>@Html.ActionLink($"{item.Description}", "Details", new { id = item.ItemId })</li>
 }
 
+
+@* @using (Html.BeginForm())
+{
+@Html.CheckBox("DateTime", true)
+<input type="submit" value="Sort" />
+} *@
+
+
+
+
 <p>@Html.ActionLink("Add new item", "Create")</p>
 <p>@Html.ActionLink("Return to categories", "Index", "Categories")</p>
 <p>@Html.ActionLink("Return Home", "Index", "Home")</p>
